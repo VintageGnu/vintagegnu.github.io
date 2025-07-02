@@ -1,5 +1,18 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family: sans-serif;
+    background-image: linear-gradient(
+        #5bcefa 0% 20%,
+        #f5a9b8 20% 40%,
+        #fff 40% 60%,
+        #f5a9b8 60% 80%
+        #5bcefa 80% 100%);
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .lightbox {
@@ -9,20 +22,38 @@ body {
     border-radius: 10px;
     margin: 10px auto;
     border: 1px solid #a3a3a3;
-    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox h1 {
+    font-size: 60px;
+}
+
+.lightbox h2 {
+    font-size: 40px;
 }
 
 @keyframes rainbow-cycle {
-    0% { color: red; }
-    25% { color: yellow; }
-    50% { color: green; }
-    75% { color: blue; }
-    100% { color: red; }
+    0% { color: #e40303; }
+    16% { color: #ff8c00; }
+    32% { color: #ffed00; }
+    48% { color: #008026; }
+    64% { color: #004cff; }
+    80% { color: #732982; }
+    100% { color: #e40303; }
 }
 
 .rainbow {
-    color: greenyellow;
-    text-shadow: 1px 1px 0 #a3a3a3, -1px -1px 0 #a3a3a3, -1px 1px 0 #a3a3a3, 1px -1px 0 #a3a3a3;
+    text-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px -1px 0 #000;
     animation-name: rainbow-cycle;
-    animation-duration: 4s;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
 }
