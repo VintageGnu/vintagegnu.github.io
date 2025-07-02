@@ -40,23 +40,27 @@ body {
     font-size: 40px;
 }
 
-@keyframes rainbow-cycle {
-    0% { color: #e40303; }
-    16% { color: #ff8c00; }
-    32% { color: #ffed00; }
-    48% { color: #008026; }
-    64% { color: #004cff; }
-    80% { color: #732982; }
-    100% { color: #e40303; }
+/* Rainbow animation from https://stackoverflow.com/a/54702294 */
+@keyframes rainbow_cycle {
+    0%, 100% {
+        background-position: 0, 0;
+    }
+
+    50% {
+        background-position: 100%, 0;
+    }
 }
 
 .rainbow {
-    text-shadow:
-        1px 1px 0 #000,
-        -1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px -1px 0 #000;
-    animation-name: rainbow-cycle;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+    background: linear-gradient(to right,
+        #e40303,
+        #ff8c00,
+        #ffed00,
+        #008026,
+        #004cff,
+        #732982);
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_cycle 20s ease-in-out infinite;
+    background-size: 400% 100%;
 }
